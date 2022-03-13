@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Parties
-    "debug_toolbar",
+    'debug_toolbar',
+    'ckeditor',
+
 ]
 
 MIDDLEWARE = [
