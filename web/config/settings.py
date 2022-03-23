@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     # Third Parties
     'ckeditor', 
     "debug_toolbar",
+
+    # Local Apps
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Sessions
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Users and authentication
+AUTH_USER_MODEL = 'users.CustomUser'
