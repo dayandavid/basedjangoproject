@@ -27,9 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Parties
-    'debug_toolbar',
-    'ckeditor',
+    'ckeditor', 
+    "debug_toolbar",
 
+    # Local Apps
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +45,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'web.urls'
+ROOT_URLCONF = 'config.urls'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 TEMPLATES = [
     {
@@ -63,7 +66,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'web.wsgi.application'
+
 
 
 # Database
@@ -131,3 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Sessions
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Users and authentication
+AUTH_USER_MODEL = 'users.CustomUser'
