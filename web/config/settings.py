@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # Local Apps
     'users.apps.UsersConfig',
+    'main.apps.MainConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,11 +76,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog',
+        'NAME': 'web',
         'USER': 'postgres',
         'PASSWORD': '93070223627',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
