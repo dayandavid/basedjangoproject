@@ -1,4 +1,5 @@
 from pathlib import Path
+from xmlrpc.client import INTERNAL_ERROR
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,6 +13,10 @@ SECRET_KEY = 'django-insecure-^q^ji!l&oi!%pd*ac9&b08!^asa+d^y%_ds#4d=rxbyt_u6cjd
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 ALLOWED_HOSTS = []
 
@@ -115,6 +120,10 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+SESSION_COOKIE_AGE = 1200
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 # Static files (CSS, JavaScript, Images)
