@@ -1,5 +1,9 @@
+import os
 from pathlib import Path
-from xmlrpc.client import INTERNAL_ERROR
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,17 +12,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^q^ji!l&oi!%pd*ac9&b08!^asa+d^y%_ds#4d=rxbyt_u6cjd'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
+
 DEBUG = True
 
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST'), ]
 
 
 # Application definition
@@ -35,6 +39,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
+    'solo.apps.SoloAppConfig',
+    'captcha',
 
     # Local Apps
     'users.apps.UsersConfig',
@@ -80,11 +86,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db',
-        'USER': 'postgres',
-        'PASSWORD': '93070223627',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DB_USER')),
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'HOST': str(os.getenv('DB_HOST')),
+        'PORT': str(os.getenv('DB_PORT')),
     }
 }
 
@@ -156,3 +162,7 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
