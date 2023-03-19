@@ -125,9 +125,9 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'main/static']
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Uploaded media files
 MEDIA_URL = '/uploads/'  # the URL used in our templates for the files
