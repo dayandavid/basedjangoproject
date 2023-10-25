@@ -82,7 +82,8 @@ TEMPLATES = [
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-#
+
+# Postgres Configuration
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
