@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
     'solo.apps.SoloAppConfig',
-    'captcha',
+    #'captcha', #eliminado captcha de Google temporalmente
 
     # Local Apps
     'users.apps.UsersConfig',
