@@ -11,6 +11,9 @@ urlpatterns = [
     
     # Django Debug Toolbar
     path('__debug__/', include(debug_toolbar.urls)),
+
+    # Captcha
+    path('captcha/', include('captcha.urls')),
 ]
 
 

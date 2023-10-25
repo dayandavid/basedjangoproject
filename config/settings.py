@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
     'solo.apps.SoloAppConfig',
-    #'captcha', #eliminado captcha de Google temporalmente
+    'captcha',
 
     # Local Apps
     'users.apps.UsersConfig',
@@ -102,7 +102,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
@@ -173,7 +172,8 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-
+CAPTCHA_IMAGE_SIZE = (150, 50)
+CAPTCHA_FONT_SIZE = 30
 
 #RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
 #RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
