@@ -8,9 +8,10 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     {% block meta %}{% endblock meta %}
-    <title>{% block title %}{% endblock title %}</title>
-    <link rel="canonical" href="">
+    <title>Inicio | {% block title %}{% endblock title %}</title>
 
+    <link rel="stylesheet" href="{% static 'fonts/playfairdisplay.css' %}">
+    <link rel="stylesheet" href="{% static "styles.css" %}">
     {% block css %}{% endblock css %}
 </head>
 <body>

@@ -177,7 +177,7 @@ CAPTCHA_IMAGE_SIZE = (150, 50)
 CAPTCHA_FONT_SIZE = 30
 
 
-GOOGLE_FONTS = ["Bodoni", "Popins", "Roboto"]
+GOOGLE_FONTS = ["Poppins", "Playfair Display", "Arvo"]
 
 #RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
 #RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
