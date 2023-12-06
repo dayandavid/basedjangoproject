@@ -22,7 +22,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST'), ]
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
     'solo.apps.SoloAppConfig',
+    'django_google_fonts',
     'captcha',
 
     # Local Apps
@@ -174,6 +175,9 @@ CKEDITOR_CONFIGS = {
 
 CAPTCHA_IMAGE_SIZE = (150, 50)
 CAPTCHA_FONT_SIZE = 30
+
+
+GOOGLE_FONTS = ["Bodoni", "Popins", "Roboto"]
 
 #RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
 #RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
