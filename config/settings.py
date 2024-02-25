@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Parties
-    'ckeditor',
+    'django_ckeditor_5',
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
     'solo.apps.SoloAppConfig',
