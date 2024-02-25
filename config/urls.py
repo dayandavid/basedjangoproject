@@ -6,6 +6,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path("", include('main.urls')),
+    path('admin/login/', admin.site.login, name='admin_login'),
 
     path('admin/', admin.site.urls),
     
@@ -14,6 +15,9 @@ urlpatterns = [
 
     # Captcha
     path('captcha/', include('captcha.urls')),
+
+    # All Auth
+    path("accounts/", include("allauth.urls")),
 ]
 
 

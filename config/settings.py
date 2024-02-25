@@ -24,6 +24,7 @@ INTERNAL_IPS = [
 
 ALLOWED_HOSTS = ['127.0.0.1', ]
 
+SITE_ID = 2
 
 # Application definition
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # Third Parties
     'django_ckeditor_5',
@@ -42,6 +44,10 @@ INSTALLED_APPS = [
     'solo.apps.SoloAppConfig',
     'django_google_fonts',
     'captcha',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
     # Local Apps
     'users.apps.UsersConfig',
@@ -57,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -159,6 +166,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Users and authentication
 AUTH_USER_MODEL = 'users.CustomUser'
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email"
+        ],
+        "AUTH_PARAMS":{"access_type": "online"},
+    }
+}
+
+AUTHENTICATION_BACKENDS = {
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend"
+}
+
+LOGIN_REDIRECT_URL = "/admin"
+
+LOGOUT_REDIRECT_URL = "/"
+
+SOCIALACCOUNT_AUTO_SIGNUP = False
 
 CKEDITOR_CONFIGS = {
     'default': {
